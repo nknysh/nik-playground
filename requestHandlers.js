@@ -1,4 +1,5 @@
 var querystring = require("querystring");
+var string = require("string");
 
 function start(response, postData) {
 	console.log("Request handler Start was called.");
@@ -24,9 +25,22 @@ var body = '<html>'+
 function upload(response, postData) {
 	console.log("Request handler Upload was called.");
 	response.writeHead(200, {"Content-Type": "text/html"});
-	response.write("You've sent the text: " + querystring.parse(postData).text);
+	var text = querystring.parse(postData).text;
+
+	response.write("WOW! You've sent the text: " + text + ", size = " + string(text).length + "<br />");
+	response.write("isValid = " + string(isValid(text)).toString());
 	response.end();
 }
 
+function isValid(myString) {
+	if (string(myString).length <= 10) {
+		return true;
+	} else {
+		return false;
+	};
+};
+
+
 exports.start = start;
 exports.upload = upload;
+exports.isValid = isValid;
