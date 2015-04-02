@@ -9,5 +9,11 @@
   "scripts": {
     "start": "node ./index.js",
     "test": "mocha ./tests/tests.js"
+  },
+  "devDependencies": {
+    "string": "3.1.1",
+    "mocha": "2.2.1",
+    "formidable": "1.0.17",
+    "chai": "2.2.0"
   }
 }
