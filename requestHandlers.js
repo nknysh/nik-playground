@@ -75,8 +75,17 @@ function isValid(myString) {
 	};
 };
 
+function isLong(myString) {
+	if (string(myString).length >= 20) {
+		return true;
+	} else {
+		return false;
+	};
+};
+
 
 exports.start = start;
 exports.upload = upload;
 exports.show = show;
 exports.isValid = isValid;
+exports.isLong = isLong;
